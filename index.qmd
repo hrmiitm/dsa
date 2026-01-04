@@ -22,7 +22,7 @@ I focus on building strong fundamentals through **consistent practice, examples,
 - 🧠 **Data Structures**  
 - ⚙️ **Algorithms**  
 - 🐘 **SQL & PostgreSQL**
-- 🐍 **Python**    
+- 🐍 **Advance Python**    
 
 
 ##### 🎯 **Goal:** Build strong problem-solving skills and database fundamentals for real-world applications and interviews.
