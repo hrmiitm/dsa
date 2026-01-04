@@ -1,0 +1,30 @@
+---
+title: "DSA & SQL Learning"
+author: "HRM"
+date: "4 JAN 2026"
+language:
+  title-block-published: "Since"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+### 📘 Data Structures, Algorithms & Databases  
+**(Python • DSA • SQL • PostgreSQL)**
+
+This website documents my learning journey in **Data Structures, Algorithms, and Databases**, using **Python** for problem-solving and **PostgreSQL** for SQL practice.  
+I focus on building strong fundamentals through **consistent practice, examples, and queries**.
+
+
+#### 🔹 What I’m Learning
+
+- 🧠 **Data Structures**  
+- ⚙️ **Algorithms**  
+- 🐘 **SQL & PostgreSQL**
+- 🐍 **Python**    
+
+
+##### 🎯 **Goal:** Build strong problem-solving skills and database fundamentals for real-world applications and interviews.
+
+##### 📚 **Who can follow this journey:** You must know the **basic** level of python, sql, dsa and databases to follow this journey/**roadmap**.

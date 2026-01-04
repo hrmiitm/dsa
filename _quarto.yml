@@ -1,0 +1,56 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "DSA by HRM"
+  search: true
+  bread-crumbs: false
+  page-navigation: true
+  reader-mode: true
+  page-footer: "Copyright 2026 Hritik Roshan Maurya. All rights reserved." 
+  navbar:
+    style: "floating"
+    pinned: false
+    tools:
+      - icon: youtube
+        href: https://www.youtube.com/@deepinside333hrm
+        target: _blank
+      - icon: house
+        href: https://hrmiitm.github.io
+        target: _blank
+
+  sidebar:
+      style: "docked"
+      search: false
+      # background: "light"
+      collapse-level: 1
+      contents:
+        - text: "**Agenda**"
+          href: index.qmd
+        - text: "---"
+        - section: "**SQL**"
+          contents:
+            - text: "Aggregates Functions"
+              href: "./qmd/SQL/1_AggregatesFunctions.qmd"
+            
+
+
+format:
+  html:
+    theme:
+      light: zephyr
+      dark: vapor
+    css: styles.css
+    toc: false
+    smooth-scroll: true
+
+      # light: morph
+      # dark: flatly
+
+    # Code formatting
+    code-copy: true
+    code-fold: show
+    code-line-numbers: true
+    # code-overflow: wrap
+    highlight-style: github

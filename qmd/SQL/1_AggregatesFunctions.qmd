@@ -1,0 +1,126 @@
+---
+title: "SQL Aggregate Functions"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+> **Note:** SQL execution sequence will be :- `From(and Join)-> Where-> Group By-> Having-> Select-> Order By-> Limit`
+> **Key tip:** WHERE filters **rows**, HAVING filters **groups**.
+
+## Aggregate Functions, GROUP BY & HAVING Clause [(Reference)](https://www.postgresql.org/docs/9.5/functions-aggregate.html){target="_blank"}
+
+
+| Function      | Description                        | Result if **no rows found** |
+|--------------|------------------------------------|-----------------------------|
+| `COUNT(*)`   | Counts total rows (includes NULLs) | `0`                         |
+| `COUNT(col)` | Counts non-NULL values             | `0`                         |
+| `SUM(col)`   | Sum of non-NULL values             | `NULL`                      |
+| `AVG(col)`   | Average of non-NULL values         | `NULL`                      |
+| `MIN(col)`   | Smallest non-NULL value            | `NULL`                      |
+| `MAX(col)`   | Largest non-NULL value             | `NULL`                      |
+
+> **Note:**  
+> All aggregate functions ignore `NULL` values except `COUNT(*)`.
+
+---
+
+## Scalar Function Used with Aggregates
+
+| Expression            | Description                            | Result if **no rows found** |
+|----------------------|----------------------------------------|-----------------------------|
+| `ROUND(AVG(col), 2)` | Rounds the average to 2 decimal places | `NULL`                      |
+
+> **Note:**  
+> `ROUND()` is **not an aggregate function**.  
+> It is a **scalar (numeric) function** applied to an aggregate result.  
+> If the aggregate result is `NULL`, `ROUND(NULL)` also returns `NULL`.
+
+---
+
+## GROUP BY Clause
+
+The `GROUP BY` clause is used to **group rows that share the same values** and apply aggregate functions to each group.
+
+### Example
+
+```sql
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department;
+```
+
+### Important Rules
+
+* Every column in `SELECT` must be:
+
+  * In the `GROUP BY` clause, **or**
+  * Used inside an aggregate function
+* Incorrect `SELECT mode, SUM(amount) from payment`
+* Correct `SELECT mode, SUM(amount) from payment GROUP BY mode`
+* `GROUP BY` is evaluated **after `WHERE`**
+* `GROUP BY` can use **multiple columns**
+
+```sql
+GROUP BY department, job_title;
+```
+
+---
+
+## HAVING Clause
+
+The `HAVING` clause is used to **filter groups**, not individual rows.
+
+### Example
+
+```sql
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 50000;
+```
+
+---
+
+## WHERE vs HAVING (Very Important)
+
+| WHERE                    | HAVING                  |
+| ------------------------ | ----------------------- |
+| Filters rows             | Filters groups          |
+| Used **before** grouping | Used **after** grouping |
+| Cannot use aggregates    | Can use aggregates      |
+
+### Example
+
+```sql
+SELECT department, COUNT(*)
+FROM employees
+WHERE status = 'ACTIVE'
+GROUP BY department
+HAVING COUNT(*) > 5;
+```
+
+---
+
+## Query Execution Order (Logical)
+
+1. `FROM`
+2. `WHERE`
+3. `GROUP BY`
+4. `HAVING`
+5. `SELECT`
+6. `ORDER BY`
+
+---
+
+## Key Exam / Interview Takeaways
+
+* `WHERE` → filters rows
+* `GROUP BY` → creates groups
+* `HAVING` → filters aggregated results
+* Aggregates return `NULL` if no rows exist (except `COUNT`)
+
+---
+
+

@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSA & SQL Learning",
+    "section": "",
+    "text": "📘 Data Structures, Algorithms & Databases\n(Python • DSA • SQL • PostgreSQL)\nThis website documents my learning journey in Data Structures, Algorithms, and Databases, using Python for problem-solving and PostgreSQL for SQL practice.\nI focus on building strong fundamentals through consistent practice, examples, and queries.\n\n🔹 What I’m Learning\n\n🧠 Data Structures\n\n⚙️ Algorithms\n\n🐘 SQL & PostgreSQL\n🐍 Python\n\n\n🎯 Goal: Build strong problem-solving skills and database fundamentals for real-world applications and interviews.\n\n\n📚 Who can follow this journey: You must know the basic level of python, sql, dsa and databases to follow this journey/roadmap.",
+    "crumbs": [
+      "**Agenda**"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/1_AggregatesFunctions.html",
+    "href": "qmd/SQL/1_AggregatesFunctions.html",
+    "title": "SQL Aggregate Functions",
+    "section": "",
+    "text": "Note: SQL execution sequence will be :- From(and Join)-&gt; Where-&gt; Group By-&gt; Having-&gt; Select-&gt; Order By-&gt; Limit Key tip: WHERE filters rows, HAVING filters groups.",
+    "crumbs": [
+      "**SQL**",
+      "Aggregates Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/1_AggregatesFunctions.html#aggregate-functions-group-by-having-clause-reference",
+    "href": "qmd/SQL/1_AggregatesFunctions.html#aggregate-functions-group-by-having-clause-reference",
+    "title": "SQL Aggregate Functions",
+    "section": "Aggregate Functions, GROUP BY & HAVING Clause (Reference)",
+    "text": "Aggregate Functions, GROUP BY & HAVING Clause (Reference)\n\n\n\n\n\n\n\n\nFunction\nDescription\nResult if no rows found\n\n\n\n\nCOUNT(*)\nCounts total rows (includes NULLs)\n0\n\n\nCOUNT(col)\nCounts non-NULL values\n0\n\n\nSUM(col)\nSum of non-NULL values\nNULL\n\n\nAVG(col)\nAverage of non-NULL values\nNULL\n\n\nMIN(col)\nSmallest non-NULL value\nNULL\n\n\nMAX(col)\nLargest non-NULL value\nNULL\n\n\n\n\nNote:\nAll aggregate functions ignore NULL values except COUNT(*).",
+    "crumbs": [
+      "**SQL**",
+      "Aggregates Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/1_AggregatesFunctions.html#scalar-function-used-with-aggregates",
+    "href": "qmd/SQL/1_AggregatesFunctions.html#scalar-function-used-with-aggregates",
+    "title": "SQL Aggregate Functions",
+    "section": "Scalar Function Used with Aggregates",
+    "text": "Scalar Function Used with Aggregates\n\n\n\n\n\n\n\n\nExpression\nDescription\nResult if no rows found\n\n\n\n\nROUND(AVG(col), 2)\nRounds the average to 2 decimal places\nNULL\n\n\n\n\nNote:\nROUND() is not an aggregate function.\nIt is a scalar (numeric) function applied to an aggregate result.\nIf the aggregate result is NULL, ROUND(NULL) also returns NULL.",
+    "crumbs": [
+      "**SQL**",
+      "Aggregates Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/1_AggregatesFunctions.html#group-by-clause",
+    "href": "qmd/SQL/1_AggregatesFunctions.html#group-by-clause",
+    "title": "SQL Aggregate Functions",
+    "section": "GROUP BY Clause",
+    "text": "GROUP BY Clause\nThe GROUP BY clause is used to group rows that share the same values and apply aggregate functions to each group.\n\nExample\nSELECT department, AVG(salary)\nFROM employees\nGROUP BY department;\n\n\nImportant Rules\n\nEvery column in SELECT must be:\n\nIn the GROUP BY clause, or\nUsed inside an aggregate function\n\nIncorrect SELECT mode, SUM(amount) from payment\nCorrect SELECT mode, SUM(amount) from payment GROUP BY mode\nGROUP BY is evaluated after WHERE\nGROUP BY can use multiple columns\n\nGROUP BY department, job_title;",
+    "crumbs": [
+      "**SQL**",
+      "Aggregates Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/1_AggregatesFunctions.html#having-clause",
+    "href": "qmd/SQL/1_AggregatesFunctions.html#having-clause",
+    "title": "SQL Aggregate Functions",
+    "section": "HAVING Clause",
+    "text": "HAVING Clause\nThe HAVING clause is used to filter groups, not individual rows.\n\nExample\nSELECT department, AVG(salary)\nFROM employees\nGROUP BY department\nHAVING AVG(salary) &gt; 50000;",
+    "crumbs": [
+      "**SQL**",
+      "Aggregates Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/1_AggregatesFunctions.html#where-vs-having-very-important",
+    "href": "qmd/SQL/1_AggregatesFunctions.html#where-vs-having-very-important",
+    "title": "SQL Aggregate Functions",
+    "section": "WHERE vs HAVING (Very Important)",
+    "text": "WHERE vs HAVING (Very Important)\n\n\n\nWHERE\nHAVING\n\n\n\n\nFilters rows\nFilters groups\n\n\nUsed before grouping\nUsed after grouping\n\n\nCannot use aggregates\nCan use aggregates\n\n\n\n\nExample\nSELECT department, COUNT(*)\nFROM employees\nWHERE status = 'ACTIVE'\nGROUP BY department\nHAVING COUNT(*) &gt; 5;",
+    "crumbs": [
+      "**SQL**",
+      "Aggregates Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/1_AggregatesFunctions.html#query-execution-order-logical",
+    "href": "qmd/SQL/1_AggregatesFunctions.html#query-execution-order-logical",
+    "title": "SQL Aggregate Functions",
+    "section": "Query Execution Order (Logical)",
+    "text": "Query Execution Order (Logical)\n\nFROM\nWHERE\nGROUP BY\nHAVING\nSELECT\nORDER BY",
+    "crumbs": [
+      "**SQL**",
+      "Aggregates Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/1_AggregatesFunctions.html#key-exam-interview-takeaways",
+    "href": "qmd/SQL/1_AggregatesFunctions.html#key-exam-interview-takeaways",
+    "title": "SQL Aggregate Functions",
+    "section": "Key Exam / Interview Takeaways",
+    "text": "Key Exam / Interview Takeaways\n\nWHERE → filters rows\nGROUP BY → creates groups\nHAVING → filters aggregated results\nAggregates return NULL if no rows exist (except COUNT)",
+    "crumbs": [
+      "**SQL**",
+      "Aggregates Functions"
+    ]
+  }
+]
