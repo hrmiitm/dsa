@@ -26,6 +26,7 @@ format:
 
 ---
 
+
 ## Scalar Function Used with Aggregates
 
 | Expression            | Description                            | Result if **no rows found** |

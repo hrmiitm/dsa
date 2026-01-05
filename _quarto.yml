@@ -37,7 +37,6 @@ website:
               href: "./qmd/SQL/2_AggreatesFunctionsP1.qmd"
             
 
-
 format:
   html:
     theme:
@@ -46,13 +45,12 @@ format:
     css: styles.css
     toc: false
     smooth-scroll: true
-
       # light: morph
       # dark: flatly
-
     # Code formatting
     code-copy: true
     code-fold: show
     code-line-numbers: true
     # code-overflow: wrap
     highlight-style: github
+    
