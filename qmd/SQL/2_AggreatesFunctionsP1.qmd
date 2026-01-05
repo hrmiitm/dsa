@@ -1,0 +1,149 @@
+---
+title: "Leetcode Practice - PostgreSQL Aggregates"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+## LeetCode Practice (PostgreSQL – Aggregates)
+
+### Easy Questions (Practice Only)
+
+1. [Recyclable and Low Fat Products](https://leetcode.com/problems/recyclable-and-low-fat-products/){target="_blank"}
+
+2. [Number of Unique Subjects Taught by Each Teacher](https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/){target="_blank"}
+
+3. [Employees Earning More Than Their Managers](https://leetcode.com/problems/employees-earning-more-than-their-managers/){target="_blank"}
+
+### Good Questions (Conceptually Important)
+
+4. [Customer Who Visited but Did Not Make Any Transactions](https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/){target="_blank"}
+
+5. [Average Time of Process per Machine](https://leetcode.com/problems/average-time-of-process-per-machine/){target="_blank"}
+
+---
+
+## Q5. Average Time of Process per Machine
+
+```sql
+SELECT a1.machine_id,
+       ROUND(AVG(a2.timestamp - a1.timestamp)::numeric, 3) AS processing_time
+FROM Activity a1
+JOIN Activity a2
+  ON a1.machine_id = a2.machine_id
+ AND a1.process_id = a2.process_id
+ AND a1.activity_type = 'start'
+ AND a2.activity_type = 'end'
+GROUP BY a1.machine_id;
+```
+
+### PostgreSQL Type System and Aggregate Functions
+
+PostgreSQL uses a strict type system that requires explicit type casting when using functions with specific data type requirements. Unlike MySQL, PostgreSQL does not perform implicit type conversions.
+
+### Key Concepts
+
+**Aggregate Function Return Types**
+
+- `AVG()` returns `double precision` (64-bit floating point)
+- `SUM()` returns the same type as input values
+- `COUNT()` returns `bigint`
+
+**ROUND Function Overloading**
+
+- `ROUND(double precision)` → rounds to nearest integer (returns `double precision`)
+- `ROUND(numeric)` → rounds to nearest integer (returns `numeric`)
+- `ROUND(numeric, integer)` → rounds to specified decimal places (returns `numeric`)
+- `ROUND(double precision, integer)` → **does not exist** ❌
+
+**Type Casting Syntax**
+
+- `value::type` → PostgreSQL-specific shorthand
+- `CAST(value AS type)` → ANSI SQL standard (portable)
+
+### Function Behavior Summary
+
+```default
+AVG(column)                    → double precision
+ROUND(double precision)        → double precision (0 decimals)
+ROUND(double precision, int)   → ERROR: function does not exist
+ROUND(numeric)                 → numeric (0 decimals)
+ROUND(numeric, int)            → numeric (specified decimals) ✅
+```
+
+### Common Patterns
+
+```sql
+-- ❌ Wrong: Direct ROUND on AVG
+ROUND(AVG(column), 2)
+
+-- ✅ Correct: Cast to numeric first
+ROUND(AVG(column)::numeric, 2)
+
+-- ✅ Alternative: CAST syntax
+ROUND(CAST(AVG(column) AS numeric), 2)
+```
+
+---
+
+## Interview Questions
+
+**Q1: Why does `ROUND(AVG(amount), 2)` fail in PostgreSQL but works in MySQL?**
+
+PostgreSQL's `AVG()` returns `double precision`, and `ROUND(double precision, integer)` doesn't exist. MySQL automatically converts types. Solution: cast to `numeric` first: `ROUND(AVG(amount)::numeric, 2)`.
+
+**Q2: What's the difference between `double precision` and `numeric` in PostgreSQL?**
+
+`double precision` is a binary floating-point type (faster, approximate), while `numeric` is exact decimal arithmetic (slower, precise). Use `numeric` for money and exact calculations; use `double precision` for scientific/statistical work.
+
+**Q3: How do you handle NULL values in PostgreSQL aggregates?**
+
+Aggregates ignore `NULL` by default. Use `COALESCE(column, 0)` to treat NULLs as zero, or `COUNT(*)` vs `COUNT(column)` to include/exclude NULLs. Use `IS NULL` / `IS NOT NULL` for comparisons (never `= NULL`).
+
+**Q4: What's the difference between `::type` and `CAST(value AS type)`?**
+
+Both perform type conversion. `::type` is PostgreSQL-specific shorthand (faster to write), while `CAST()` is ANSI SQL standard (portable across databases). Use `CAST()` for cross-database compatibility.
+
+**Q5: Why use self-join in this query instead of window functions?**
+
+Self-join pairs start/end events explicitly. Alternative with window function:
+
+```sql
+SELECT machine_id,
+       ROUND(AVG(CASE WHEN activity_type = 'end' 
+                      THEN timestamp - LAG(timestamp) OVER (PARTITION BY machine_id, process_id)
+                 END)::numeric, 3)
+FROM Activity
+GROUP BY machine_id;
+```
+
+---
+
+## PostgreSQL vs MySQL Key Differences
+
+**Type Coercion**
+
+- PostgreSQL: strict typing, explicit casting required
+- MySQL: loose typing, automatic conversion
+
+**NULL Handling**
+
+- PostgreSQL: `NULL = NULL` returns `NULL` (must use `IS NULL`)
+- MySQL: similar, but mode-dependent behavior
+
+**String Comparison**
+
+- PostgreSQL: case-sensitive by default
+- MySQL: case-insensitive by default (collation-dependent)
+
+---
+
+## Final Takeaways
+
+- PostgreSQL enforces **strict type safety** — no implicit conversions
+- Aggregate functions return **specific data types** — know the return type
+- Formatting numeric results requires **explicit casting to `numeric`**
+- `NULL` comparisons need **`IS NULL`/`IS NOT NULL`** operators
+- Queries working in MySQL may **fail in PostgreSQL** without type casts
+- Use `::type` for quick PostgreSQL scripts, `CAST()` for portable code

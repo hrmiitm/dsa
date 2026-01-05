@@ -33,6 +33,8 @@ website:
           contents:
             - text: "Aggregates Functions"
               href: "./qmd/SQL/1_AggregatesFunctions.qmd"
+            - text: "Practice-1"
+              href: "./qmd/SQL/2_AggreatesFunctionsP1.qmd"
             
 
 
