@@ -8,7 +8,7 @@ format:
 
 ## LeetCode Practice (PostgreSQL – Aggregates)
 
-### Easy Questions (Practice Only)
+### Easy Questions
 
 1. [Recyclable and Low Fat Products](https://leetcode.com/problems/recyclable-and-low-fat-products/){target="_blank"}
 
