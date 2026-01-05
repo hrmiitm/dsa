@@ -1,15 +1,3 @@
----
-title: "DSA & SQL Learning"
-author: "HRM"
-date: "4 JAN 2026"
-language:
-  title-block-published: "Since"
-format:
-  html:
-    smooth-scroll: true
-    highlight-style: github
----
-
 ### 📘 Data Structures, Algorithms & Databases  
 **(Python • DSA • SQL • PostgreSQL)**
 
