@@ -3,7 +3,7 @@
 
 This website documents my learning journey in **Data Structures, Algorithms, and Databases**, using **Python** for problem-solving and **PostgreSQL** for SQL practice.  
 I focus on building strong fundamentals through **consistent practice, examples, and queries**.  
-You can track my progress and solutions on my [LeetCode 🖥️ account](https://leetcode.com/u/hrmiitm/).
+You can track my progress and solutions on my [LeetCode 🖥️ account](https://leetcode.com/u/hrmiitm/){target="_blank"}.
 
 #### 🔹 What I’m Learning
 
