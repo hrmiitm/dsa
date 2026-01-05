@@ -139,6 +139,7 @@ GROUP BY machine_id;
 
 ---
 
+
 ## Final Takeaways
 
 - PostgreSQL enforces **strict type safety** — no implicit conversions
