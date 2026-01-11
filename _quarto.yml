@@ -35,6 +35,8 @@ website:
               href: "./qmd/SQL/1_AggregatesFunctions.qmd"
             - text: "Practice-1"
               href: "./qmd/SQL/2_AggreatesFunctionsP1.qmd"
+            - text: "Practice-2"
+              href: "./qmd/SQL/3_P2.qmd"
             
 
 format:

@@ -1,0 +1,22 @@
+---
+title: "Practice - 2"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+## Basic practice
+
+- [CodeChef SQL Basic Commands](https://www.codechef.com/practice/sql-case-studies-topic-wise){target="_blank"}
+- All question under `1 Basic Commands` in above link
+- [Subquery vs Join use](https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP04){target="_blank"}
+- Just above question can be solve using subquery, but that is costly, so use join
+- [Date Ordering](https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP05){target="_blank"}
+
+
+### LeetCode Revision
+
+- [Second Highest Salary](https://leetcode.com/problems/second-highest-salary/){target="_blank"}
+- [Number of Unique Subjects Taught by Each Teacher](https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/){target="_blank"}
+- [Search Insert Position](https://leetcode.com/problems/search-insert-position/){target="_blank"}
