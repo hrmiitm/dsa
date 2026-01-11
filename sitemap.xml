@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hrmiitm.github.io/dsa/qmd/SQL/2_AggreatesFunctionsP1.html</loc>
-    <lastmod>2026-01-05T18:51:22.954Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hrmiitm.github.io/dsa/index.html</loc>
-    <lastmod>2026-01-05T18:51:22.954Z</lastmod>
+    <loc>https://hrmiitm.github.io/dsa/qmd/SQL/3_P2.html</loc>
+    <lastmod>2026-01-11T16:56:04.680Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/dsa/qmd/SQL/1_AggregatesFunctions.html</loc>
-    <lastmod>2026-01-05T18:51:22.954Z</lastmod>
+    <lastmod>2026-01-11T16:56:04.680Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hrmiitm.github.io/dsa/index.html</loc>
+    <lastmod>2026-01-11T16:56:04.680Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hrmiitm.github.io/dsa/qmd/SQL/2_AggreatesFunctionsP1.html</loc>
+    <lastmod>2026-01-11T16:56:04.680Z</lastmod>
   </url>
 </urlset>

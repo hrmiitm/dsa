@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="HRM">
-<meta name="dcterms.date" content="2026-01-04">
 
-<title>DSA &amp; SQL Learning – DSA by HRM</title>
+<title>Practice - 2 – DSA by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,28 +23,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c2cb7e0b3076a20157071e492cb50f0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-0c5b58de5cf64f3542caacbc690827f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-c2cb7e0b3076a20157071e492cb50f0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../qmd/SQL/2_AggreatesFunctionsP1.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c2cb7e0b3076a20157071e492cb50f0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-0c5b58de5cf64f3542caacbc690827f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-c2cb7e0b3076a20157071e492cb50f0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -249,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">DSA by HRM</span>
     </a>
   </div>
@@ -272,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">DSA &amp; SQL Learning</h1>
+          <h1 class="quarto-secondary-nav-title">Practice - 2</h1>
         </a>     
     </div>
   </nav>
@@ -285,35 +284,35 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Agenda</strong></span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>SQL</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmd/SQL/1_AggregatesFunctions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/SQL/1_AggregatesFunctions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Aggregates Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmd/SQL/2_AggreatesFunctionsP1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/SQL/2_AggreatesFunctionsP1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Practice-1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmd/SQL/3_P2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/SQL/3_P2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Practice-2</span></a>
   </div>
 </li>
@@ -331,26 +330,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">DSA &amp; SQL Learning</h1>
+<h1 class="title d-none d-lg-block">Practice - 2</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>HRM </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Since</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 4, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -360,30 +347,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="data-structures-algorithms-databases" class="level3">
-<h3 class="anchored" data-anchor-id="data-structures-algorithms-databases">📘 Data Structures, Algorithms &amp; Databases</h3>
-<p><strong>(Python • DSA • SQL • PostgreSQL)</strong></p>
-<p>This website documents my learning journey in <strong>Data Structures, Algorithms, and Databases</strong>, using <strong>Python</strong> for problem-solving and <strong>PostgreSQL</strong> for SQL practice.<br>
-I focus on building strong fundamentals through <strong>consistent practice, examples, and queries</strong>.<br>
-You can track my progress and solutions on my <a href="https://leetcode.com/u/hrmiitm/" target="_blank">LeetCode 🖥️ account</a>.</p>
-<section id="what-im-learning" class="level4">
-<h4 class="anchored" data-anchor-id="what-im-learning">🔹 What I’m Learning</h4>
+<section id="basic-practice" class="level2">
+<h2 class="anchored" data-anchor-id="basic-practice">Basic practice</h2>
 <ul>
-<li>🧠 <strong>Data Structures</strong><br>
-</li>
-<li>⚙️ <strong>Algorithms</strong><br>
-</li>
-<li>🐘 <strong>SQL &amp; PostgreSQL</strong></li>
-<li>🐍 <strong>Advance Python</strong></li>
+<li><a href="https://www.codechef.com/practice/sql-case-studies-topic-wise" target="_blank">CodeChef SQL Basic Commands</a></li>
+<li>All question under <code>1 Basic Commands</code> in above link</li>
+<li><a href="https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP04" target="_blank">Subquery vs Join use</a></li>
+<li>Just above question can be solve using subquery, but that is costly, so use join</li>
+<li><a href="https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP05" target="_blank">Date Ordering</a></li>
 </ul>
-<section id="goal-build-strong-problem-solving-skills-and-database-fundamentals-for-real-world-applications-and-interviews." class="level5">
-<h5 class="anchored" data-anchor-id="goal-build-strong-problem-solving-skills-and-database-fundamentals-for-real-world-applications-and-interviews.">🎯 <strong>Goal:</strong> Build strong problem-solving skills and database fundamentals for real-world applications and interviews.</h5>
-</section>
-<section id="who-can-follow-this-journey-you-must-know-the-basic-level-of-python-sql-dsa-and-databases-to-follow-this-journeyroadmap." class="level5">
-<h5 class="anchored" data-anchor-id="who-can-follow-this-journey-you-must-know-the-basic-level-of-python-sql-dsa-and-databases-to-follow-this-journeyroadmap.">📚 <strong>Who can follow this journey:</strong> You must know the <strong>basic</strong> level of python, sql, dsa, and databases to follow this journey/<strong>roadmap</strong>.</h5>
+<section id="leetcode-revision" class="level3">
+<h3 class="anchored" data-anchor-id="leetcode-revision">LeetCode Revision</h3>
+<ul>
+<li><a href="https://leetcode.com/problems/second-highest-salary/" target="_blank">Second Highest Salary</a></li>
+<li><a href="https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/" target="_blank">Number of Unique Subjects Taught by Each Teacher</a></li>
+<li><a href="https://leetcode.com/problems/search-insert-position/" target="_blank">Search Insert Position</a></li>
+</ul>
 
 
-</section>
 </section>
 </section>
 
@@ -801,6 +782,15 @@ You can track my progress and solutions on my <a href="https://leetcode.com/u/hr
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../qmd/SQL/2_AggreatesFunctionsP1.html" class="pagination-link" aria-label="Practice-1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practice-1</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -819,5 +809,5 @@ You can track my progress and solutions on my <a href="https://leetcode.com/u/hr
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

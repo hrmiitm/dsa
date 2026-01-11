@@ -1,78 +1,24 @@
 [
   {
-    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html",
-    "href": "qmd/SQL/2_AggreatesFunctionsP1.html",
-    "title": "Leetcode Practice - PostgreSQL Aggregates",
+    "objectID": "qmd/SQL/3_P2.html",
+    "href": "qmd/SQL/3_P2.html",
+    "title": "Practice - 2",
     "section": "",
-    "text": "Recyclable and Low Fat Products\nNumber of Unique Subjects Taught by Each Teacher\nEmployees Earning More Than Their Managers\n\n\n\n\n\nCustomer Who Visited but Did Not Make Any Transactions\nAverage Time of Process per Machine",
+    "text": "CodeChef SQL Basic Commands\nAll question under 1 Basic Commands in above link\nSubquery vs Join use\nJust above question can be solve using subquery, but that is costly, so use join\nDate Ordering\n\n\n\n\nSecond Highest Salary\nNumber of Unique Subjects Taught by Each Teacher\nSearch Insert Position",
     "crumbs": [
       "**SQL**",
-      "Practice-1"
+      "Practice-2"
     ]
   },
   {
-    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html#leetcode-practice-postgresql-aggregates",
-    "href": "qmd/SQL/2_AggreatesFunctionsP1.html#leetcode-practice-postgresql-aggregates",
-    "title": "Leetcode Practice - PostgreSQL Aggregates",
+    "objectID": "qmd/SQL/3_P2.html#basic-practice",
+    "href": "qmd/SQL/3_P2.html#basic-practice",
+    "title": "Practice - 2",
     "section": "",
-    "text": "Recyclable and Low Fat Products\nNumber of Unique Subjects Taught by Each Teacher\nEmployees Earning More Than Their Managers\n\n\n\n\n\nCustomer Who Visited but Did Not Make Any Transactions\nAverage Time of Process per Machine",
+    "text": "CodeChef SQL Basic Commands\nAll question under 1 Basic Commands in above link\nSubquery vs Join use\nJust above question can be solve using subquery, but that is costly, so use join\nDate Ordering\n\n\n\n\nSecond Highest Salary\nNumber of Unique Subjects Taught by Each Teacher\nSearch Insert Position",
     "crumbs": [
       "**SQL**",
-      "Practice-1"
-    ]
-  },
-  {
-    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html#q5.-average-time-of-process-per-machine",
-    "href": "qmd/SQL/2_AggreatesFunctionsP1.html#q5.-average-time-of-process-per-machine",
-    "title": "Leetcode Practice - PostgreSQL Aggregates",
-    "section": "Q5. Average Time of Process per Machine",
-    "text": "Q5. Average Time of Process per Machine\nSELECT a1.machine_id,\n       ROUND(AVG(a2.timestamp - a1.timestamp)::numeric, 3) AS processing_time\nFROM Activity a1\nJOIN Activity a2\n  ON a1.machine_id = a2.machine_id\n AND a1.process_id = a2.process_id\n AND a1.activity_type = 'start'\n AND a2.activity_type = 'end'\nGROUP BY a1.machine_id;\n\nPostgreSQL Type System and Aggregate Functions\nPostgreSQL uses a strict type system that requires explicit type casting when using functions with specific data type requirements. Unlike MySQL, PostgreSQL does not perform implicit type conversions.\n\n\nKey Concepts\nAggregate Function Return Types\n\nAVG() returns double precision (64-bit floating point)\nSUM() returns the same type as input values\nCOUNT() returns bigint\n\nROUND Function Overloading\n\nROUND(double precision) → rounds to nearest integer (returns double precision)\nROUND(numeric) → rounds to nearest integer (returns numeric)\nROUND(numeric, integer) → rounds to specified decimal places (returns numeric)\nROUND(double precision, integer) → does not exist ❌\n\nType Casting Syntax\n\nvalue::type → PostgreSQL-specific shorthand\nCAST(value AS type) → ANSI SQL standard (portable)\n\n\n\nFunction Behavior Summary\nAVG(column)                    → double precision\nROUND(double precision)        → double precision (0 decimals)\nROUND(double precision, int)   → ERROR: function does not exist\nROUND(numeric)                 → numeric (0 decimals)\nROUND(numeric, int)            → numeric (specified decimals) ✅\n\n\nCommon Patterns\n-- ❌ Wrong: Direct ROUND on AVG\nROUND(AVG(column), 2)\n\n-- ✅ Correct: Cast to numeric first\nROUND(AVG(column)::numeric, 2)\n\n-- ✅ Alternative: CAST syntax\nROUND(CAST(AVG(column) AS numeric), 2)",
-    "crumbs": [
-      "**SQL**",
-      "Practice-1"
-    ]
-  },
-  {
-    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html#interview-questions",
-    "href": "qmd/SQL/2_AggreatesFunctionsP1.html#interview-questions",
-    "title": "Leetcode Practice - PostgreSQL Aggregates",
-    "section": "Interview Questions",
-    "text": "Interview Questions\nQ1: Why does ROUND(AVG(amount), 2) fail in PostgreSQL but works in MySQL?\nPostgreSQL’s AVG() returns double precision, and ROUND(double precision, integer) doesn’t exist. MySQL automatically converts types. Solution: cast to numeric first: ROUND(AVG(amount)::numeric, 2).\nQ2: What’s the difference between double precision and numeric in PostgreSQL?\ndouble precision is a binary floating-point type (faster, approximate), while numeric is exact decimal arithmetic (slower, precise). Use numeric for money and exact calculations; use double precision for scientific/statistical work.\nQ3: How do you handle NULL values in PostgreSQL aggregates?\nAggregates ignore NULL by default. Use COALESCE(column, 0) to treat NULLs as zero, or COUNT(*) vs COUNT(column) to include/exclude NULLs. Use IS NULL / IS NOT NULL for comparisons (never = NULL).\nQ4: What’s the difference between ::type and CAST(value AS type)?\nBoth perform type conversion. ::type is PostgreSQL-specific shorthand (faster to write), while CAST() is ANSI SQL standard (portable across databases). Use CAST() for cross-database compatibility.\nQ5: Why use self-join in this query instead of window functions?\nSelf-join pairs start/end events explicitly. Alternative with window function:\nSELECT machine_id,\n       ROUND(AVG(CASE WHEN activity_type = 'end' \n                      THEN timestamp - LAG(timestamp) OVER (PARTITION BY machine_id, process_id)\n                 END)::numeric, 3)\nFROM Activity\nGROUP BY machine_id;",
-    "crumbs": [
-      "**SQL**",
-      "Practice-1"
-    ]
-  },
-  {
-    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html#postgresql-vs-mysql-key-differences",
-    "href": "qmd/SQL/2_AggreatesFunctionsP1.html#postgresql-vs-mysql-key-differences",
-    "title": "Leetcode Practice - PostgreSQL Aggregates",
-    "section": "PostgreSQL vs MySQL Key Differences",
-    "text": "PostgreSQL vs MySQL Key Differences\nType Coercion\n\nPostgreSQL: strict typing, explicit casting required\nMySQL: loose typing, automatic conversion\n\nNULL Handling\n\nPostgreSQL: NULL = NULL returns NULL (must use IS NULL)\nMySQL: similar, but mode-dependent behavior\n\nString Comparison\n\nPostgreSQL: case-sensitive by default\nMySQL: case-insensitive by default (collation-dependent)",
-    "crumbs": [
-      "**SQL**",
-      "Practice-1"
-    ]
-  },
-  {
-    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html#final-takeaways",
-    "href": "qmd/SQL/2_AggreatesFunctionsP1.html#final-takeaways",
-    "title": "Leetcode Practice - PostgreSQL Aggregates",
-    "section": "Final Takeaways",
-    "text": "Final Takeaways\n\nPostgreSQL enforces strict type safety — no implicit conversions\nAggregate functions return specific data types — know the return type\nFormatting numeric results requires explicit casting to numeric\nNULL comparisons need IS NULL/IS NOT NULL operators\nQueries working in MySQL may fail in PostgreSQL without type casts\nUse ::type for quick PostgreSQL scripts, CAST() for portable code",
-    "crumbs": [
-      "**SQL**",
-      "Practice-1"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DSA & SQL Learning",
-    "section": "",
-    "text": "📘 Data Structures, Algorithms & Databases\n(Python • DSA • SQL • PostgreSQL)\nThis website documents my learning journey in Data Structures, Algorithms, and Databases, using Python for problem-solving and PostgreSQL for SQL practice.\nI focus on building strong fundamentals through consistent practice, examples, and queries.\nYou can track my progress and solutions on my LeetCode 🖥️ account.\n\n🔹 What I’m Learning\n\n🧠 Data Structures\n\n⚙️ Algorithms\n\n🐘 SQL & PostgreSQL\n🐍 Advance Python\n\n\n🎯 Goal: Build strong problem-solving skills and database fundamentals for real-world applications and interviews.\n\n\n📚 Who can follow this journey: You must know the basic level of python, sql, dsa, and databases to follow this journey/roadmap.",
-    "crumbs": [
-      "**Agenda**"
+      "Practice-2"
     ]
   },
   {
@@ -161,6 +107,82 @@
     "crumbs": [
       "**SQL**",
       "Aggregates Functions"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSA & SQL Learning",
+    "section": "",
+    "text": "📘 Data Structures, Algorithms & Databases\n(Python • DSA • SQL • PostgreSQL)\nThis website documents my learning journey in Data Structures, Algorithms, and Databases, using Python for problem-solving and PostgreSQL for SQL practice.\nI focus on building strong fundamentals through consistent practice, examples, and queries.\nYou can track my progress and solutions on my LeetCode 🖥️ account.\n\n🔹 What I’m Learning\n\n🧠 Data Structures\n\n⚙️ Algorithms\n\n🐘 SQL & PostgreSQL\n🐍 Advance Python\n\n\n🎯 Goal: Build strong problem-solving skills and database fundamentals for real-world applications and interviews.\n\n\n📚 Who can follow this journey: You must know the basic level of python, sql, dsa, and databases to follow this journey/roadmap.",
+    "crumbs": [
+      "**Agenda**"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html",
+    "href": "qmd/SQL/2_AggreatesFunctionsP1.html",
+    "title": "Leetcode Practice - PostgreSQL Aggregates",
+    "section": "",
+    "text": "Recyclable and Low Fat Products\nNumber of Unique Subjects Taught by Each Teacher\nEmployees Earning More Than Their Managers\n\n\n\n\n\nCustomer Who Visited but Did Not Make Any Transactions\nAverage Time of Process per Machine",
+    "crumbs": [
+      "**SQL**",
+      "Practice-1"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html#leetcode-practice-postgresql-aggregates",
+    "href": "qmd/SQL/2_AggreatesFunctionsP1.html#leetcode-practice-postgresql-aggregates",
+    "title": "Leetcode Practice - PostgreSQL Aggregates",
+    "section": "",
+    "text": "Recyclable and Low Fat Products\nNumber of Unique Subjects Taught by Each Teacher\nEmployees Earning More Than Their Managers\n\n\n\n\n\nCustomer Who Visited but Did Not Make Any Transactions\nAverage Time of Process per Machine",
+    "crumbs": [
+      "**SQL**",
+      "Practice-1"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html#q5.-average-time-of-process-per-machine",
+    "href": "qmd/SQL/2_AggreatesFunctionsP1.html#q5.-average-time-of-process-per-machine",
+    "title": "Leetcode Practice - PostgreSQL Aggregates",
+    "section": "Q5. Average Time of Process per Machine",
+    "text": "Q5. Average Time of Process per Machine\nSELECT a1.machine_id,\n       ROUND(AVG(a2.timestamp - a1.timestamp)::numeric, 3) AS processing_time\nFROM Activity a1\nJOIN Activity a2\n  ON a1.machine_id = a2.machine_id\n AND a1.process_id = a2.process_id\n AND a1.activity_type = 'start'\n AND a2.activity_type = 'end'\nGROUP BY a1.machine_id;\n\nPostgreSQL Type System and Aggregate Functions\nPostgreSQL uses a strict type system that requires explicit type casting when using functions with specific data type requirements. Unlike MySQL, PostgreSQL does not perform implicit type conversions.\n\n\nKey Concepts\nAggregate Function Return Types\n\nAVG() returns double precision (64-bit floating point)\nSUM() returns the same type as input values\nCOUNT() returns bigint\n\nROUND Function Overloading\n\nROUND(double precision) → rounds to nearest integer (returns double precision)\nROUND(numeric) → rounds to nearest integer (returns numeric)\nROUND(numeric, integer) → rounds to specified decimal places (returns numeric)\nROUND(double precision, integer) → does not exist ❌\n\nType Casting Syntax\n\nvalue::type → PostgreSQL-specific shorthand\nCAST(value AS type) → ANSI SQL standard (portable)\n\n\n\nFunction Behavior Summary\nAVG(column)                    → double precision\nROUND(double precision)        → double precision (0 decimals)\nROUND(double precision, int)   → ERROR: function does not exist\nROUND(numeric)                 → numeric (0 decimals)\nROUND(numeric, int)            → numeric (specified decimals) ✅\n\n\nCommon Patterns\n-- ❌ Wrong: Direct ROUND on AVG\nROUND(AVG(column), 2)\n\n-- ✅ Correct: Cast to numeric first\nROUND(AVG(column)::numeric, 2)\n\n-- ✅ Alternative: CAST syntax\nROUND(CAST(AVG(column) AS numeric), 2)",
+    "crumbs": [
+      "**SQL**",
+      "Practice-1"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html#interview-questions",
+    "href": "qmd/SQL/2_AggreatesFunctionsP1.html#interview-questions",
+    "title": "Leetcode Practice - PostgreSQL Aggregates",
+    "section": "Interview Questions",
+    "text": "Interview Questions\nQ1: Why does ROUND(AVG(amount), 2) fail in PostgreSQL but works in MySQL?\nPostgreSQL’s AVG() returns double precision, and ROUND(double precision, integer) doesn’t exist. MySQL automatically converts types. Solution: cast to numeric first: ROUND(AVG(amount)::numeric, 2).\nQ2: What’s the difference between double precision and numeric in PostgreSQL?\ndouble precision is a binary floating-point type (faster, approximate), while numeric is exact decimal arithmetic (slower, precise). Use numeric for money and exact calculations; use double precision for scientific/statistical work.\nQ3: How do you handle NULL values in PostgreSQL aggregates?\nAggregates ignore NULL by default. Use COALESCE(column, 0) to treat NULLs as zero, or COUNT(*) vs COUNT(column) to include/exclude NULLs. Use IS NULL / IS NOT NULL for comparisons (never = NULL).\nQ4: What’s the difference between ::type and CAST(value AS type)?\nBoth perform type conversion. ::type is PostgreSQL-specific shorthand (faster to write), while CAST() is ANSI SQL standard (portable across databases). Use CAST() for cross-database compatibility.\nQ5: Why use self-join in this query instead of window functions?\nSelf-join pairs start/end events explicitly. Alternative with window function:\nSELECT machine_id,\n       ROUND(AVG(CASE WHEN activity_type = 'end' \n                      THEN timestamp - LAG(timestamp) OVER (PARTITION BY machine_id, process_id)\n                 END)::numeric, 3)\nFROM Activity\nGROUP BY machine_id;",
+    "crumbs": [
+      "**SQL**",
+      "Practice-1"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html#postgresql-vs-mysql-key-differences",
+    "href": "qmd/SQL/2_AggreatesFunctionsP1.html#postgresql-vs-mysql-key-differences",
+    "title": "Leetcode Practice - PostgreSQL Aggregates",
+    "section": "PostgreSQL vs MySQL Key Differences",
+    "text": "PostgreSQL vs MySQL Key Differences\nType Coercion\n\nPostgreSQL: strict typing, explicit casting required\nMySQL: loose typing, automatic conversion\n\nNULL Handling\n\nPostgreSQL: NULL = NULL returns NULL (must use IS NULL)\nMySQL: similar, but mode-dependent behavior\n\nString Comparison\n\nPostgreSQL: case-sensitive by default\nMySQL: case-insensitive by default (collation-dependent)",
+    "crumbs": [
+      "**SQL**",
+      "Practice-1"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html#final-takeaways",
+    "href": "qmd/SQL/2_AggreatesFunctionsP1.html#final-takeaways",
+    "title": "Leetcode Practice - PostgreSQL Aggregates",
+    "section": "Final Takeaways",
+    "text": "Final Takeaways\n\nPostgreSQL enforces strict type safety — no implicit conversions\nAggregate functions return specific data types — know the return type\nFormatting numeric results requires explicit casting to numeric\nNULL comparisons need IS NULL/IS NOT NULL operators\nQueries working in MySQL may fail in PostgreSQL without type casts\nUse ::type for quick PostgreSQL scripts, CAST() for portable code",
+    "crumbs": [
+      "**SQL**",
+      "Practice-1"
     ]
   }
 ]
