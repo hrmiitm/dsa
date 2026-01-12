@@ -1,0 +1,25 @@
+---
+title: "Practice - 3"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+## SQL practice
+
+- [Aggregate Nesting](https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLPRAC05/problems/SQLP46){target="_blank"}
+- Direct nesting of aggregate functions (like writing AVG(SUM(column))) isn’t allowed in SQL. Instead, you use subqueries or CTEs to achieve nested aggregation, and the depth is only limited by your database’s query nesting or recursion limits, which are typically very high and implementation-dependent.
+- [Min on Varchar](https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLPRAC05/problems/SQLP47){target="_blank"}
+- MIN treats the varchar values as strings and finds the minimum value by comparing their characters from left to right ( lexicographical order ).
+- [When and Case](https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLPRAC05/problems/SQLP50){target="_blank"}
+
+
+### LeetCode Revision
+
+- [181. Employees Earning More Than Their Managers](https://leetcode.com/problems/employees-earning-more-than-their-managers){target="_blank"}
+- [1757. Recyclable and Low Fat Products](https://leetcode.com/problems/recyclable-and-low-fat-products){target="_blank"}
+- [2520. Count the Digits That Divide a Number](https://leetcode.com/problems/count-the-digits-that-divide-a-number){target="_blank"}
+- [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array){target="_blank"}
+- [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water){target="_blank"}
+- [9. Palindrome Number](https://leetcode.com/problems/palindrome-number){target="_blank"}
