@@ -120,6 +120,28 @@
     ]
   },
   {
+    "objectID": "qmd/SQL/4_P3.html",
+    "href": "qmd/SQL/4_P3.html",
+    "title": "Practice - 3",
+    "section": "",
+    "text": "Aggregate Nesting\nDirect nesting of aggregate functions (like writing AVG(SUM(column))) isn’t allowed in SQL. Instead, you use subqueries or CTEs to achieve nested aggregation, and the depth is only limited by your database’s query nesting or recursion limits, which are typically very high and implementation-dependent.\nMin on Varchar\nMIN treats the varchar values as strings and finds the minimum value by comparing their characters from left to right ( lexicographical order ).\nWhen and Case\n\n\n\n\n181. Employees Earning More Than Their Managers\n1757. Recyclable and Low Fat Products\n2520. Count the Digits That Divide a Number\n34. Find First and Last Position of Element in Sorted Array\n11. Container With Most Water\n9. Palindrome Number",
+    "crumbs": [
+      "**SQL**",
+      "Practice-3"
+    ]
+  },
+  {
+    "objectID": "qmd/SQL/4_P3.html#sql-practice",
+    "href": "qmd/SQL/4_P3.html#sql-practice",
+    "title": "Practice - 3",
+    "section": "",
+    "text": "Aggregate Nesting\nDirect nesting of aggregate functions (like writing AVG(SUM(column))) isn’t allowed in SQL. Instead, you use subqueries or CTEs to achieve nested aggregation, and the depth is only limited by your database’s query nesting or recursion limits, which are typically very high and implementation-dependent.\nMin on Varchar\nMIN treats the varchar values as strings and finds the minimum value by comparing their characters from left to right ( lexicographical order ).\nWhen and Case\n\n\n\n\n181. Employees Earning More Than Their Managers\n1757. Recyclable and Low Fat Products\n2520. Count the Digits That Divide a Number\n34. Find First and Last Position of Element in Sorted Array\n11. Container With Most Water\n9. Palindrome Number",
+    "crumbs": [
+      "**SQL**",
+      "Practice-3"
+    ]
+  },
+  {
     "objectID": "qmd/SQL/2_AggreatesFunctionsP1.html",
     "href": "qmd/SQL/2_AggreatesFunctionsP1.html",
     "title": "Leetcode Practice - PostgreSQL Aggregates",
