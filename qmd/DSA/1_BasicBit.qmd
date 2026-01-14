@@ -25,7 +25,21 @@ format:
    * `a ^ a = 0`, `a ^ 0 = a`
    * ⭐ Very important
 
-4. **[338. Counting Bits](https://leetcode.com/problems/counting-bits/){target="_blank"}**
+4. **[461. Hamming Distance](https://leetcode.com/problems/hamming-distance/){target="_blank"}**
+
+   * Concept: XOR + count 1s
+   * Very intuitive
+
+5. **[476. Number Complement](https://leetcode.com/problems/number-complement/){target="_blank"}**
+
+   * Concept: Flip bits
+   * Learn masking
+
+6. **[190. Reverse Bits](https://leetcode.com/problems/reverse-bits/){target="_blank"}**
+
+   * Concept: Bit shifting + masking
+
+7. **[338. Counting Bits](https://leetcode.com/problems/counting-bits/){target="_blank"}**
 
    * Concept: DP + bit counting
    * Extension of problem 191
