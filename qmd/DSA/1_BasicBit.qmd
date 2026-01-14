@@ -1,0 +1,31 @@
+---
+title: "Basic Question on Bit Manupulations - 1"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+### LeetCode Basic Bit Manupulations
+
+1. **[231. Power of Two](https://leetcode.com/problems/power-of-two/){target="_blank"}**
+
+   * Concept: `n & (n - 1)`
+   * Checks understanding of binary representation
+   * ⭐ Must-do
+
+2. **[191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/){target="_blank"}**
+
+   * Concept: Count set bits
+   * Learn: `n & 1`, `n >> 1`
+
+3. **[136. Single Number](https://leetcode.com/problems/single-number/){target="_blank"}**
+
+   * Concept: XOR cancels duplicates
+   * `a ^ a = 0`, `a ^ 0 = a`
+   * ⭐ Very important
+
+4. **[338. Counting Bits](https://leetcode.com/problems/counting-bits/){target="_blank"}**
+
+   * Concept: DP + bit counting
+   * Extension of problem 191
