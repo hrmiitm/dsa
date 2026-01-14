@@ -114,7 +114,7 @@
     "href": "qmd/DSA/1_BasicBit.html",
     "title": "Basic Question on Bit Manupulations - 1",
     "section": "",
-    "text": "LeetCode Basic Bit Manupulations\n\n231. Power of Two\n\nConcept: n & (n - 1)\nChecks understanding of binary representation\n⭐ Must-do\n\n191. Number of 1 Bits\n\nConcept: Count set bits\nLearn: n & 1, n &gt;&gt; 1\n\n136. Single Number\n\nConcept: XOR cancels duplicates\na ^ a = 0, a ^ 0 = a\n⭐ Very important\n\n338. Counting Bits\n\nConcept: DP + bit counting\nExtension of problem 191",
+    "text": "LeetCode Basic Bit Manupulations\n\n231. Power of Two\n\nConcept: n & (n - 1)\nChecks understanding of binary representation\n⭐ Must-do\n\n191. Number of 1 Bits\n\nConcept: Count set bits\nLearn: n & 1, n &gt;&gt; 1\n\n136. Single Number\n\nConcept: XOR cancels duplicates\na ^ a = 0, a ^ 0 = a\n⭐ Very important\n\n461. Hamming Distance\n\nConcept: XOR + count 1s\nVery intuitive\n\n476. Number Complement\n\nConcept: Flip bits\nLearn masking\n\n190. Reverse Bits\n\nConcept: Bit shifting + masking\n\n338. Counting Bits\n\nConcept: DP + bit counting\nExtension of problem 191",
     "crumbs": [
       "**DSA**",
       "Bit Manupulations",
