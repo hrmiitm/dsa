@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Practice - 3 – DSA by HRM</title>
+<title>Basic Question on Bit Manupulations - 1 – DSA by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/SQL/3_P2.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -271,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Practice - 3</h1>
+          <h1 class="quarto-secondary-nav-title">Basic Question on Bit Manupulations - 1</h1>
         </a>     
     </div>
   </nav>
@@ -318,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/SQL/4_P3.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../qmd/SQL/4_P3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Practice-3</span></a>
   </div>
 </li>
@@ -336,16 +335,16 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Bit Manupulations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/DSA/1_BasicBit.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/DSA/1_BasicBit.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Basic Practice-1</span></a>
   </div>
 </li>
@@ -365,7 +364,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Practice - 3</h1>
+<h1 class="title d-none d-lg-block">Basic Question on Bit Manupulations - 1</h1>
 </div>
 
 
@@ -382,28 +381,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="sql-practice" class="level2">
-<h2 class="anchored" data-anchor-id="sql-practice">SQL practice</h2>
+<section id="leetcode-basic-bit-manupulations" class="level3">
+<h3 class="anchored" data-anchor-id="leetcode-basic-bit-manupulations">LeetCode Basic Bit Manupulations</h3>
+<ol type="1">
+<li><p><strong><a href="https://leetcode.com/problems/power-of-two/" target="_blank">231. Power of Two</a></strong></p>
 <ul>
-<li><a href="https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLPRAC05/problems/SQLP46" target="_blank">Aggregate Nesting</a></li>
-<li>Direct nesting of aggregate functions (like writing AVG(SUM(column))) isn’t allowed in SQL. Instead, you use subqueries or CTEs to achieve nested aggregation, and the depth is only limited by your database’s query nesting or recursion limits, which are typically very high and implementation-dependent.</li>
-<li><a href="https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLPRAC05/problems/SQLP47" target="_blank">Min on Varchar</a></li>
-<li>MIN treats the varchar values as strings and finds the minimum value by comparing their characters from left to right ( lexicographical order ).</li>
-<li><a href="https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLPRAC05/problems/SQLP50" target="_blank">When and Case</a></li>
-</ul>
-<section id="leetcode-revision" class="level3">
-<h3 class="anchored" data-anchor-id="leetcode-revision">LeetCode Revision</h3>
+<li>Concept: <code>n &amp; (n - 1)</code></li>
+<li>Checks understanding of binary representation</li>
+<li>⭐ Must-do</li>
+</ul></li>
+<li><p><strong><a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank">191. Number of 1 Bits</a></strong></p>
 <ul>
-<li><a href="https://leetcode.com/problems/employees-earning-more-than-their-managers" target="_blank">181. Employees Earning More Than Their Managers</a></li>
-<li><a href="https://leetcode.com/problems/recyclable-and-low-fat-products" target="_blank">1757. Recyclable and Low Fat Products</a></li>
-<li><a href="https://leetcode.com/problems/count-the-digits-that-divide-a-number" target="_blank">2520. Count the Digits That Divide a Number</a></li>
-<li><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array" target="_blank">34. Find First and Last Position of Element in Sorted Array</a></li>
-<li><a href="https://leetcode.com/problems/container-with-most-water" target="_blank">11. Container With Most Water</a></li>
-<li><a href="https://leetcode.com/problems/palindrome-number" target="_blank">9. Palindrome Number</a></li>
-</ul>
+<li>Concept: Count set bits</li>
+<li>Learn: <code>n &amp; 1</code>, <code>n &gt;&gt; 1</code></li>
+</ul></li>
+<li><p><strong><a href="https://leetcode.com/problems/single-number/" target="_blank">136. Single Number</a></strong></p>
+<ul>
+<li>Concept: XOR cancels duplicates</li>
+<li><code>a ^ a = 0</code>, <code>a ^ 0 = a</code></li>
+<li>⭐ Very important</li>
+</ul></li>
+<li><p><strong><a href="https://leetcode.com/problems/counting-bits/" target="_blank">338. Counting Bits</a></strong></p>
+<ul>
+<li>Concept: DP + bit counting</li>
+<li>Extension of problem 191</li>
+</ul></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -820,15 +825,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../qmd/SQL/3_P2.html" class="pagination-link" aria-label="Practice-2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practice-2</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
