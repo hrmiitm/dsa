@@ -24,7 +24,7 @@ website:
       style: "docked"
       search: false
       # background: "light"
-      collapse-level: 1
+      collapse-level: 2
       contents:
         - text: "**Agenda**"
           href: index.qmd
@@ -39,7 +39,15 @@ website:
               href: "./qmd/SQL/3_P2.qmd"
             - text: "Practice-3"
               href: "./qmd/SQL/4_P3.qmd"
-            
+
+        - text: "---"
+        
+        - section: "**DSA**"
+          contents:
+            - section: "Bit Manupulations"
+              contents:
+                - text: "Basic Practice-1"
+                  href: "./qmd/DSA/1_BasicBit.qmd"
 
 format:
   html:
